@@ -40,6 +40,8 @@ while quit==False:
     playnot = input("Want to play Again (yes,no) : ").lower()
     if playnot == "no":
         quit=True
+    elif playnot =="yes":
+        quit=False
     else:
         print('You typed wrong vro , Now play again !! ')
 
@@ -49,3 +51,5 @@ if computer > player:
     print("You Lost !!\n")
 elif computer < player:
     print("You Wins :) !!\n")
+elif computer==player:
+    print("TIED !!")
