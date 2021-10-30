@@ -17,33 +17,41 @@ while quit==False:
             wrong = False
         else:
             print("Wrong Input!!\n")
-    if item==choice:
+    if choice=="rock" and item=="scissor" or choice=="scissor" and item=="paper" or choice=="paper" and item=="rock" :
         player +=1
         print("\nYou Won : )")
         print("\nComputer's choice :",item)
         print("Your Choice : ",choice,"\n")
         
 
-    elif item!=choice:
+    elif choice=="scissor" and item=="rock" or choice=="paper" and item=="scissor" or choice=="rock" and item=="paper":
         computer+=1
-        print("\nYou Lost")
+        print("\nYou Lost :(")
         print("\nComputer's choice :",item)
         print("Your Choice : ",choice ,"\n")
         
 
-    else :
-        print("\n What are you doing man !!!!")
+    elif choice==item :
+        print("\n Tied !!")
+        print("\nComputer's choice :",item)
+        print("Your Choice : ",choice ,"\n")
     
     print("Computer = ",computer)
     print("PLAYER = ",player,"\n")
 
-    playnot = input("Want to play Again (yes,no) : ").lower()
-    if playnot == "no":
-        quit=True
-    elif playnot =="yes":
+    Out=True
+    while Out==True:
+        playnot = input("Want to play Again (yes,no) : ").lower()
+        if playnot=="yes" or playnot=="no":
+            Out=False
+        else:
+            print("\nWrong Input")
+    if playnot == "yes":
         quit=False
-    else:
-        print('You typed wrong vro , Now play again !! ')
+    elif playnot =="no":
+        quit=True
+        
+    
 
 print("\n## FINAL SCORE ##\n")
 if computer > player:
